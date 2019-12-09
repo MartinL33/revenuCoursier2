@@ -1,0 +1,89 @@
+Facture:          
+                                      Client: Deliveroo France SAS 
+                                                19 rue des Petites Écuries 
+                                                Paris, France 75010
+                                                N° SIRET: 810 365 817 00016
+
+
+
+
+Ernettpur
+Nom: tintin
+Date de facturation: 07 Mai 2019
+Facture n°: DELI-1
+adresse : montagne
+Facture pour la période: 03 Mai 2019 au 04 Mai 2019
+Ville: uneVilleEnFrance
+
+
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+
+
+
+                    Prestations du 03 Mai 2019 au 04 Mai 2019
+Jour      Date         De      À       Heures   Commandes livréesTotal
+Vendredi 03 Mai 2019  18:02   22:00   4.0h     10: €61.32       €61.32 
+Samedi    04 Mai 2019  18:00   22:29   4.5h     13: €89.97       €89.97
+                                                (Dont €16.00 de 
+                                                condition tarifaire 
+                                                exceptionnelle)
+
+
+Résumé
+Commandes livrées €151.29
+Pourboires      €7.00
+Total TTC     €158.29
+
+
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée, 
+article L441-3 et L441-6 du Code de commerce »
+
+
+
+Facture n°: DELI-1
+
+Facture:  
+
+
+                                                               Client: Deliveroo France SAS 
+                                                               19 rue des Petites Écuries 
+                                                               Paris, France 75010
+                                                               N° SIRET: 810 365 817 00016
+
+
+
+
+Emetteur: 
+Nom: tintin
+Date de facturation: 13 Mai 2019
+Facture n°: DELI-2
+adresse : montagne
+Facture pour la période: 07 Mai 2019 au 10 Mai 2019
+Ville: uneVilleEnFrance
+
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+
+
+
+                          Prestations du 07 Mai 2019 au 10 Mai 2019
+Jour          Date            De        À          Heures      Commandes livrées     Total
+Mardi         07 Mai 2019     19:05     22:41      3.6h        10: €57.42            €57.42 
+Vendredi      10 Mai 2019     19:13     22:01      2.8h        8: €49.21             €49.21
+
+
+Résumé
+Commandes livrées €106.63
+Pourboires           €2.00
+Frais de transaction €-0.50
+Récompenses          €50.00
+Total TTC          €158.13
+
+
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée, 
+article L441-3 et L441-6 du Code de commerce »
+
+
+
+Facture n°: DELI-2

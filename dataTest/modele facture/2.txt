@@ -1,0 +1,25 @@
+Client: Deliveroo France SAS
+9 rue du Quatre Septembre
+75002 Paris
+N° SIRET : 810 365 817 00016
+Emetteur :
+Facture pour la periode: 17 avril 2016 – 30 avril 2016
+Adresse : rue, france, bordeaux, 33000
+N° SIREN : 8195567564
+Facture n° : DELI-3
+Nom: un syndicaliste malhonnete
+Date de facturation : 02 mai 2016
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Ajustements
+Catégorie Note Montant
+Autres UPWE+S16 50,00 €
+Total 50,00 €
+Resumé
+Prestations 7,50 €/hr  20.5hrs = 153,75 €
+Pourboires 11,00 €
+Commission 2,00 €/livraison  31 livraisons = 62,00 e
+Ajustements 50,00 €
+Total 276,75 €
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera
+demandée, article L.441-3 et L.441-6 du Code de commerce »

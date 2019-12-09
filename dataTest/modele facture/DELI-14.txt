@@ -1,0 +1,45 @@
+Client : Deliveroo France SAS
+1bis Avenue de la République
+Paris, France 75011
+N° SIRET: 810 365 817 00156
+Émetteur :
+Nom : Coursier1
+Ville : ville1
+Adresse du siège social : villelumiere
+N° de TVA intracommunautaire : FR 91 856784
+Capital Social : euros
+N° SIRET : 8294567820
+Date de facturation : 10 Septembre 2019
+Référence facture : DELI-14
+Facture pour la période : 06 Septembre 2019 au 08 Septembre 2019
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Prestations du 06 Septembre 2019 au 08 Septembre 2019
+Jour Date De À Durée du
+créneau
+Commandes livrées Total
+Vendredi 06 Septembre 2019 20:01 21:49 1.8h 3: €16.44 €16.44
+Dimanche 08 Septembre 2019 19:07 22:00 2.9h 7: €27.58 €27.58
+Ajustements
+Catégorie Note Montant
+Condition Tarifaire Exceptionnelle Condition tarifaire
+exceptionnelle du
+08/09/2019 : 7
+commandes acceptees
+et livrees entre 19:00 et
+22:00
+€10.50
+Total des ajustements €10.50
+Résumé
+Commandes livrées €44.02
+Ajustments €10.50
+Total HT €54.52
+TVA 20% €10.90
+Pourboires €7.00
+Total TTC €72.42
+En cas de retard ou de non paiement, des pénalités sont exigibles le jour suivant la date de règlement figurant sur
+la facture et calculées au taux d'intérêt appliqué par la Banque Centrale Européenne à son opération de
+1Référence facture : DELI-14
+refinancement la plus récente majoré de 10 points de pourcentage, ainsi qu'une indemnité forfaitaire pour frais de
+recouvrement de 40 euros (Décret n° 2012-1115 du 02/10/2012), et sans qu'un rappel soit nécessaire (Art. L441-6
+du Code de Commerce).
+2Référence facture : DELI-14

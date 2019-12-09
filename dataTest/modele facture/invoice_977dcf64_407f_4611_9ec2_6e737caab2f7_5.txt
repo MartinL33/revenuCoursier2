@@ -1,0 +1,37 @@
+Client: Deliveroo France SAS
+19 rue des Petites Écuries
+Paris, France 75010
+N° SIRET: 810 365 817 00016
+Emetteur:
+Nom: uneCoursiere
+Adresse : Douves, 33800, Bordeaux, France
+N° SIREN : 823886045664
+Date de facturation: 29 Janvier 2018
+Facture n°: DELI-5
+Facture pour la période: 14 Janvier 2018 au 18 Janvier 2018
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Prestations du 14 Janvier 2018 au 18 Janvier 2018
+Jour Date De À Heures Commandes livrées Total
+Ajustements
+Catégorie Note Mont
+ant
+Régularisation période
+précédente
+Prestation realisee commande 68493633 €5.00
+Condition Tarifaire
+Exceptionnelle
+Garanties shift du 2018-01-10 en BDX de 19:01:30 a 21:00:00 : 15.00 euros
+par heure en moyenne (les garanties ne sont pas calculees heure par heure)
+garantis entre 19:00 et 21:00
+€9.75
+Total des
+ajustements
+€14.7
+5
+Résumé
+Ajustments €14.75
+Total TTC €14.75
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article L.441-3 et L.441-6 du Code de commerce »
+1Facture n°: DELI-5

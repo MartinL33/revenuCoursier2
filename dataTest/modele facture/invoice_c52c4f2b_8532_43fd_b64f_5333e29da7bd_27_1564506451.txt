@@ -1,0 +1,33 @@
+Client: Deliveroo France SAS
+1bis Avenue de la République
+Paris, France 75011
+N° SIRET: 810 365 817 00156
+Emetteur:
+Nom: un arbre
+Adresse : montagne
+N° SIREN : 841164560849
+Date de facturation: 30 Juillet 2019
+Facture n°: DELI-27
+Facture pour la période: 30 Juin 2019 au 27 Juillet 2019
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Prestations du 30 Juin 2019 au 27 Juillet 2019
+Jour Date De À Durée du créneau Commandes livrées Total
+Lundi 15 Juillet 2019 20:01 21:26 1.4h 3: €18.91 €18.91
+Mercredi 17 Juillet 2019 19:00 20:32 1.5h 4: €25.30 €25.30
+Jeudi 25 Juillet 2019 19:00 21:15 2.2h 6: €36.53 €36.53
+Samedi 27 Juillet 2019 20:18 21:29 1.2h 3: €18.35 €18.35
+Ajustements
+Catégorie Note Montant
+Remise pour recommandation Pour Avoir Recommande
+Quentin Bibollet-Ruche
+€200.00
+Total des ajustements €200.00
+Résumé
+Commandes livrées €99.09
+Pourboires €2.00
+Ajustments €200.00
+Total TTC €301.09
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article L.441-3 et L.441-6 du Code de commerce »
+1Facture n°: DELI-27

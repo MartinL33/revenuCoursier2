@@ -1,0 +1,36 @@
+Client: Deliveroo France SAS
+19 rue des Petites Écuries
+Paris, France 75010
+N° SIRET: 810 365 817 00016
+Emetteur:
+Nom: Martin Lepers
+Adresse : APP B119, 237 rue du 14 juillet, , 33400, TALENCE, France
+N° SIREN : 828847632
+Date de facturation: 31 Juillet 2018
+Facture n°: DELI-26
+Facture pour la période: 18 Juillet 2018 au 29 Juillet 2018
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Prestations du 18 Juillet 2018 au 29 Juillet 2018
+Jour Date De À Heures Commandes livrées Total
+Mercredi 18 Juillet 2018 10:10 13:09 3.0h 4: €21.71 €21.71
+Samedi 21 Juillet 2018 10:10 13:18 3.1h 2: €10.07 €10.07
+Dimanche 22 Juillet 2018 10:14 12:30 2.3h 1: €12.21 €12.21
+Dimanche 29 Juillet 2018 19:00 21:54 2.9h 5: €33.80
+(Dont €1.00 de
+condition tarifaire
+exceptionnelle)
+€33.80
+Ajustements
+Catégorie Note Montant
+Avance d’installation d’équipement Remboursement Kit
+Deliveroo
+€150.00
+Total des ajustements €150.00
+Résumé
+Commandes livrées €77.79
+Ajustments €150.00
+Total TTC €227.79
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article L.441-3 et L.441-6 du Code de commerce »
+1Facture n°: DELI-26

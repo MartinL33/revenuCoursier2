@@ -1,0 +1,45 @@
+Client: Deliveroo France SAS
+19 rue des Petites Écuries
+Paris, France 75010
+N° SIRET: 810 365 817 00016
+Emetteur:
+Nom: un syndicaliste malhonnete
+Adresse : bordeaux
+N° SIREN : 819545699564
+Date de facturation: 12 décembre 2016
+Facture n°: DELI-19
+Facture pour la période: 27 novembre 2016 - 10 décembre 2016
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Détail des prestations - 27 novembre 2016 - 10 décembre 2016
+Jour Date De À Heures Commandes livrées Total
+Lundi 28 novembre 2016 09:30 22:53 13.4 × (7.5) 22 × (3.0) €166,50
+Mardi 29 novembre 2016 19:31 21:26 2.0 × (7.5) 4 × (3.0) €27,00
+Mardi 29 novembre 2016 09:30 14:19 4.9 × (7.5) 5 × (3.0) €51,75
+Mercredi 30 novembre 2016 11:30 18:29 7.0 × (7.5) 5 × (3.0) €67,50
+Vendredi 02 décembre 2016 11:30 17:40 6.2 × (7.5) 6 × (3.0) €64,50
+Dimanche 04 décembre 2016 11:31 19:00 7.5 × (7.5) 9 × (3.0) €83,25
+Dimanche 04 décembre 2016 19:00 23:16 4.3 × (12.5) 5 × (3.0) €68,75
+Lundi 05 décembre 2016 14:45 22:51 8.1 × (7.5) 13 × (3.0) €99,75
+Mardi 06 décembre 2016 18:45 23:23 4.7 × (7.5) 8 × (3.0) €59,25
+Mardi 06 décembre 2016 11:30 14:42 3.2 × (7.5) 3 × (3.0) €33,00
+Ajustements
+Catégorie Note Montan
+t
+Régularisation période
+précédente
+https://deliveroo.co.uk/admin/orders/18926281  Biker à 5km du
+restau.
+€6,00
+Total des ajustements €6,00
+1
+Résumé
+Prestations €7,50/h × 57.0h = €427,50
+€12,50/h × 4.3h = €53,75
+Commission €3,00/commande × 80 commandes =  €240,00
+Pourboires €7,00
+Ajustements €6,00
+Total €734,25
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article L.441-3 et L.441-6 du Code de commerce »
+2
