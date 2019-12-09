@@ -1,0 +1,41 @@
+Client: Deliveroo France SAS
+1bis Avenue de la République
+Paris, France 75011
+N° SIRET: 810 365 817 00156
+Emetteur:
+Nom: Chien
+Adresse : montagne2
+N° SIREN : 828356771294
+Date de facturation: 23 Juillet 2019
+Facture n°: DELI-53
+Facture pour la période: 07 Juillet 2019 au 23 Juillet 2019
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Prestations du 07 Juillet 2019 au 23 Juillet 2019
+Jour Date De À Durée du créneau Commandes livrées Total
+Mardi 16 Juillet 2019 17:02 21:41 4.7h 10: €59.89 €59.89
+Jeudi 18 Juillet 2019 11:30 20:22 8.9h 16: €88.51 €88.51
+Vendredi 19 Juillet 2019 11:30 17:33 6.0h 9: €42.48 €42.48
+Vendredi 19 Juillet 2019 18:04 20:36 2.5h 4: €19.34 €19.34
+Samedi 20 Juillet 2019 11:37 17:30 5.9h 14: €72.55 €72.55
+Samedi 20 Juillet 2019 19:02 21:26 2.4h 5: €23.98 €23.98
+Dimanche 21 Juillet 2019 11:33 17:18 5.8h 5: €35.69 €35.69
+Dimanche 21 Juillet 2019 18:11 22:00 3.8h 11: €55.75 €55.75
+Lundi 22 Juillet 2019 15:03 22:10 7.1h 13: €64.59 €64.59
+Mardi 23 Juillet 2019 13:08 18:00 4.9h 9: €49.42 €49.42
+Ajustements
+Catégorie Note Montant
+Régularisation période précédente Doublon : commande
+non livree #221041020
+€4.44
+Total des ajustements €4.44
+Résumé
+Commandes livrées €512.20
+Pourboires €20.00
+Ajustments €4.44
+Frais de transaction €-0.50
+1Facture n°: DELI-53
+Total TTC €536.14
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article L.441-3 et L.441-6 du Code de commerce »
+2Facture n°: DELI-53

@@ -22,7 +22,7 @@ import importFacture.Shift;
 import importFacture.Value;
 
 public class DataRegroupeTest {
-	static String pathTest="/home/martin/git/revenu-coursier/revenu-coursier-rep/dataTest/";
+	static String pathTest="/home/martin/git/revenuCoursier2/dataTest/";
 	static DataFromDirectory data;
 	static File fileTest;
 	
@@ -67,7 +67,7 @@ public class DataRegroupeTest {
 		Assert.assertEquals(32.37, shift.getDuree(), 0.01);	
 
 
-		Biker baptiste=dataRegroupe.getBiker("baptiste leprince favereaux");
+		Biker baptiste=dataRegroupe.getBiker("chien");
 		Assert.assertEquals(1,baptiste.getSize());
 
 		shift=baptiste.getFirstShift();
@@ -96,7 +96,7 @@ public class DataRegroupeTest {
 		Assert.assertEquals(0, shift.getPrime(), 0.01);	
 		Assert.assertEquals(2.83, shift.getDuree(), 0.01);	
 
-		Biker baptiste=dataRegroupe.getBiker("baptiste leprince favereaux");
+		Biker baptiste=dataRegroupe.getBiker("chien");
 		Assert.assertEquals(2,baptiste.getSize());
 
 		shift=baptiste.getFirstShift();
@@ -121,7 +121,7 @@ public class DataRegroupeTest {
 		Assert.assertEquals(5, shift.getRevenue(), 0.01);	
 		Assert.assertEquals(0.03, shift.getDuree(), 0.01);	   	
 
-		shift=dataRegroupe.getBiker("baptiste leprince favereaux").getFirstShift();
+		shift=dataRegroupe.getBiker("chien").getFirstShift();
 		Assert.assertNotNull(shift);
 		Assert.assertEquals(1.74, shift.getNbCommande(), 0.01);
 		Assert.assertEquals(8.62, shift.getRevenue(), 0.01);	
@@ -167,7 +167,7 @@ public class DataRegroupeTest {
 		Assert.assertEquals(0, shift.getPrime(), 0.01);	
 		Assert.assertEquals(2.83, shift.getDuree(), 0.01);	
 
-		shift=dataRegroupe.getBiker("baptiste leprince favereaux").getFirstShift();
+		shift=dataRegroupe.getBiker("chien").getFirstShift();
 		Assert.assertNotNull(shift);
 		Assert.assertEquals(10, shift.getNbCommande(), 0.01);
 		Assert.assertEquals(59.89, shift.getRevenue(), 0.01);	
