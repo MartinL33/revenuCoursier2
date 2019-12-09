@@ -348,7 +348,7 @@ public class MonteurFacture {
 		if(tabLine.length==2) {
 			aDeduireLine=Float.parseFloat(trimString(tabLine[1]));
 		}		
-		GUI.messageConsole(line+" a deduire du total ttc:"+aDeduireLine);
+		fr.gui.GUI.messageConsole(line+" a deduire du total ttc:"+aDeduireLine);
 		return aDeduireLine;
 	}
 

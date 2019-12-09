@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 import fr.algorithmes.ScannerFolder;
+
 import fr.gui.GUI;
 
 public class Factures {

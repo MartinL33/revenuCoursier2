@@ -26,7 +26,6 @@ import javax.swing.JPanel;
 
 import fr.modele.Action;
 import fr.modele.Value;
-import fr.modele.ValueParametresGUI;
 
 public class GUI extends JFrame{
 
@@ -39,7 +38,7 @@ public class GUI extends JFrame{
 	static int widthFenetre=450;
 	static int heightFenetre=200;
 
-	private static ResourceBundle guiLangBundle = ResourceBundle.getBundle("importFacture.GUILang",langue ); 
+	private static ResourceBundle guiLangBundle = ResourceBundle.getBundle("fr.gui.GUILang",langue ); 
 
 	private final JPanel panGUI = new JPanel();
 
