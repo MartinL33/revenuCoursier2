@@ -1,0 +1,33 @@
+Client: Deliveroo France SAS
+1bis Avenue de la République
+Paris, France 75011
+N° SIRET: 810 365 817 00156
+Emetteur:
+Nom: martin L
+Adresse : bordeaux
+N° SIREN : 828356771294
+Date de facturation: 23 Juillet 2019
+Facture n°: DELI-53
+Facture pour la période: 07 Juillet 2019 au 23 Juillet 2019
+FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
+Prestations du 07 Juillet 2019 au 23 Juillet 2019
+Jour Date De À Durée du créneau Commandes livrées Total
+Mercredi 12 Juin 2019 11:39 14:00 2.3h 6: €29.16 €29.16
+Mercredi 12 Juin 2019 19:10 23:13 4.0h 11: €58.66 €58.66
+Ajustements
+Catégorie Note Montant
+Régularisation période précédente Doublon : commande
+non livree #221041020
+€4.44
+Total des ajustements €4.44
+Résumé
+Commandes livrées €512.20
+Pourboires €20.00
+Ajustments €4.44
+Frais de transaction €-0.50
+1Facture n°: DELI-53
+Total TTC €536.14
+TVA non applicable, art. 293 B du CGI
+« En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article L.441-3 et L.441-6 du Code de commerce »
+2Facture n°: DELI-53
