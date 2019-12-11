@@ -77,7 +77,7 @@ public class Map implements Cloneable{
 			t.douglasPeucker();	     
 		}	 
 		Long time2 = System.currentTimeMillis();
-		System.out.println("time fix track "+String.valueOf(((float)(time2-time1))/1000)+" s");
+	//	System.out.println("time fix track "+String.valueOf(((float)(time2-time1))/1000)+" s");
 	}
 
 

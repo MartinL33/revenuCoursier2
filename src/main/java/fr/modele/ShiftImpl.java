@@ -15,35 +15,35 @@ import fr.gui.GUI;
  */
 public class ShiftImpl extends Shift implements Cloneable {
 
-    @Override
-    public Shift clone() {	  
+	@Override
+	public Shift clone() {	  
 
-	ShiftImpl clone=null;
-	try{	  
-	    clone = (ShiftImpl) super.clone();
-	    clone.setCalendars((Calendar)this.calendarDebut.clone(), (Calendar)this.calendarFin.clone());
+		ShiftImpl clone=null;
+		try{	  
+			clone = (ShiftImpl) super.clone();
+			clone.setCalendars((Calendar)this.calendarDebut.clone(), (Calendar)this.calendarFin.clone());
+		}
+		catch(CloneNotSupportedException e) { 
+			GUI.messageConsole(e.toString());
+		}
+		return clone;
+	}   
+
+	@Override
+	public Shift clone2() {	
+		return clone();
 	}
-	catch(CloneNotSupportedException e) { 
-	    GUI.messageConsole(e.toString());
+
+	@Override
+	protected Shift cloneForRegroupage() {	
+		return clone();
 	}
-	return clone;
-    }   
-
-    @Override
-    public Shift clone2() {	
-	return clone();
-    }
-
-    @Override
-    protected Shift cloneForRegroupage() {	
-	return clone();
-    }
-
-    
-
-    
 
 
-    
+
+
+
+
+
 
 }

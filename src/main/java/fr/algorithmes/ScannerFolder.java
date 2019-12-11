@@ -8,11 +8,10 @@ public class ScannerFolder {
 	
 	private String extention = null;
 	private File directory = null;	
-	private List<File> result = new ArrayList<File>();
+	private List<File> result;
 		
 	public void setExtention(String extention) {
-		this.extention = extention;
-		result = new ArrayList<File>();
+		this.extention = extention;		
 	}
 
 	public void setDirectory(File directory) {
@@ -21,6 +20,7 @@ public class ScannerFolder {
 	
 	
 	public List<File> find(){
+		result = new ArrayList<File>();
 		assertValid();
 		findFile(directory);	
 		return result;
@@ -28,7 +28,7 @@ public class ScannerFolder {
 
 	public boolean hasResult() {
 		assertValid();
-		findFile(directory);
+		find();
 		if(result.isEmpty()) return false;
 		return result.size() > 0;
 	}

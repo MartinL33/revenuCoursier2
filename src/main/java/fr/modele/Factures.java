@@ -42,7 +42,10 @@ public class Factures {
 
 		for (File file : files) {			
 			if(!Value.runImport) break;
-			importFromTxt(file);
+			if(!file.getName().equalsIgnoreCase(fr.map.ValueMap.nameFileLocaDomicile)) {
+				importFromTxt(file);
+			}
+			
 		}
 	}
 

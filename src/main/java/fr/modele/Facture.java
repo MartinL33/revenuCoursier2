@@ -113,7 +113,6 @@ public class Facture{
 			}
 			this.nameFile=nameFile;
 		}
-
 	}
 
 	public String toString() {

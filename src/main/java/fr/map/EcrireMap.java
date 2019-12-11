@@ -21,7 +21,7 @@ public class EcrireMap {
 	long tailleMaxCarteOctet=5000000;
 	Boolean limiteTaille=true;
 
-	Boolean isSupprimerShiftSansGPSfiable = true;
+	Boolean isSupprimerShiftSansGPSfiable = false;
 
 	public void setMap(Map map) {
 		this.map = map;
@@ -81,7 +81,7 @@ public class EcrireMap {
 			ecrireJson();
 		}
 		Long time2 = System.currentTimeMillis();
-		System.out.println("time Ecriture Map "+String.valueOf(((float)(time2-time1))/1000)+" s");
+	//	System.out.println("time Ecriture Map "+String.valueOf(((float)(time2-time1))/1000)+" s");
 	}
 		
 	private void ecrireJson() {

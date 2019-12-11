@@ -15,11 +15,12 @@ import fr.map.Map;
 
 public class MapTest {
 
-	//Test trop long pour tester systematiquement  
+	//le fichier Historique des positions.json fait 200Mo, trop gros pour gitHub
+	//Et le Test est trop long pour tester systematiquement 
 	@Test  @Ignore
 	public void testMapComplete() {
 
-		String pathFileTest=DataRegroupeTest.pathTest+"GPS carte complete/Historique des positions.json";
+		String pathFileTest="/home/martin/Bureau/Historique des positions.json";
 		File fileMap=new File(pathFileTest);	
 
 		ImportMapFromJSON importMapFromJSON = new ImportMapFromJSON(fileMap);

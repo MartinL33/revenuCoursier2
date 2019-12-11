@@ -38,7 +38,7 @@ public class Value {
 	return String.format(localeResult,"%.2f", doubleAFormater);
     }
 
-    static final String separateurCSV=";";
+    public static final String separateurCSV=";";
 
     //  static String pathFactures="";
     static String pathResult="";

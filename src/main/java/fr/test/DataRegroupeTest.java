@@ -22,7 +22,7 @@ import fr.modele.Shift;
 import fr.modele.Value;
 
 public class DataRegroupeTest {
-	static String pathTest="/home/martin/git/revenuCoursier2/dataTest/";
+	static String pathTest=System.getProperty("user.dir")+"/dataTest/";
 	static DataFromDirectory data;
 	static File fileTest;
 	

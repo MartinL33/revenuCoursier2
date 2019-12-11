@@ -2,6 +2,7 @@ package fr.modele;
 
 import static fr.modele.Text.messEcritureFichier;
 import static fr.modele.Value.regroupageSelected;
+import static fr.algorithmes.Utilitaire.getMultiSeparateur;
 
 import java.io.BufferedWriter;
 import java.io.File;
@@ -69,7 +70,7 @@ public class EcrireBikers {
 	private void writeEntete(BufferedWriter bw) throws IOException {
 
 		String line= "Biker"+ regroupageSelected.separateurEnteteDebut;
-		if(bikers.length>1) line+="total"+regroupageSelected.separateurEnteteEnd+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV;
+		if(bikers.length>1) line+="total"+regroupageSelected.separateurEnteteEnd+getMultiSeparateur(7);
 		for(Biker b:bikers) {
 			line+=b.getNameBiker()+regroupageSelected.separateurEnteteEnd+Value.separateurCSV;
 		}
@@ -79,9 +80,9 @@ public class EcrireBikers {
 
 
 		line= regroupageSelected.getEnteteResultDate();
-		if(bikers.length>1) line+=regroupageSelected.getEnteteResultEnd()+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV;
-		for(int i=0;i<bikers.length;i++) {
-			line+=regroupageSelected.getEnteteResultEnd()+Value.separateurCSV;
+		if(bikers.length>1) line+=regroupageSelected.getEnteteResultEnd(bikerTotal)+getMultiSeparateur(7);
+		for(Biker biker:bikers) {
+			line+=regroupageSelected.getEnteteResultEnd(biker)+Value.separateurCSV;
 		}
 
 		bw.write(line);
@@ -123,9 +124,11 @@ public class EcrireBikers {
 			shiftTotalPrecedent=shiftTotal;
 
 			line=regroupageSelected.getStringRegroupageDate();	    
-			line+=regroupageSelected.lineBikerCA()+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV+Value.separateurCSV;
+			line+=regroupageSelected.lineBikerCA()+getMultiSeparateur(6);
 
-			for(Biker biker:bikers) {
+			for(Biker biker:bikers) {		
+				
+				
 				line+=biker.getLineToWrite(shiftTotal);	
 			}				
 

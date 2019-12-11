@@ -26,3 +26,5 @@ hs_err_pid*
 
 # Files created by test
 *.csv
+*.kml
+position GPS domicile.txt

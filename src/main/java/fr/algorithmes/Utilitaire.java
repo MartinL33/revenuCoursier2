@@ -1,5 +1,7 @@
 package fr.algorithmes;
 
+import fr.modele.Value;
+
 public class Utilitaire {
 	
 	
@@ -11,5 +13,18 @@ public class Utilitaire {
 			}
 		}	
 		return false;
+	}
+	
+	public static String getMultiSeparateur(int count) {
+		StringBuilder res=new StringBuilder();
+		for(int i=0;i<count;i++) {
+			res.append(Value.separateurCSV);
+		}
+		return res.toString();
+	}
+	
+	public static String formatDouble(double doubleAformate) {
+		double res=(((int) (doubleAformate*100))+0.0)/100;
+		return String.valueOf(res);
 	}
 }

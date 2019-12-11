@@ -69,12 +69,11 @@ public class Track implements Cloneable{
 		listeLoca.add(newlocalisation);
 	}
 
-	void setShift(ShiftImplGPS shift) {	
-		this.shiftGPS=(ShiftImplGPS)shift;
+	public ShiftImplGPS getShiftImplGPS() {	
+		return this.shiftGPS;
 	}
 
 	public Track clone() {
-
 
 		Track clone=new Track(this.shiftGPS);    
 		for(Localisation l:listeLoca) {

@@ -639,7 +639,7 @@ public class MonteurFacture {
 
 	private boolean factureValide() {
 		if(facture.getDateDebut()==null) {
-			System.out.println("date null");
+			System.out.println("facture non valide : date null");
 			return false;
 		}
 		if(facture.getDateFin()==null) {
