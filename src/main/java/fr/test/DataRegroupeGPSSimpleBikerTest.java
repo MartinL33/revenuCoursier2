@@ -6,8 +6,10 @@ import java.io.File;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import fr.modele.Action;
 import fr.modele.Biker;
 import fr.modele.BikerImpGPS;
 import fr.modele.DataFromDirectory;
@@ -28,11 +30,13 @@ public class DataRegroupeGPSSimpleBikerTest {
 		
 		data=new DataFromDirectory();
 		data.importDataFromDirectory(fileTest);
+		
+		Action.setFileExport(fileTest);
 		Assert.assertEquals("erreur nombre Biker",1, data.getNbBiker());	
 		Assert.assertEquals("erreur nombre Facture",2, data.getNbFacture());
 	}
 	
-	@Test
+	@Test 
 	public void testRegroupementParMois() {
 		Value.regroupageSelected=RegroupementParMois.getInstance();
 		Value.isSupprimerShiftSansGPSfiable=false;

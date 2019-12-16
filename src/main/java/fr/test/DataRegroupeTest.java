@@ -116,6 +116,7 @@ public class DataRegroupeTest {
 		Assert.assertEquals(69,total.getSize());
 
 		Shift shift=dataRegroupe.getBiker("martin lepers").getFirstShift();
+	//	System.out.println(shift.toString());
 		Assert.assertNotNull(shift);
 		Assert.assertEquals(1, shift.getNbCommande(), 0.01);
 		Assert.assertEquals(5, shift.getRevenue(), 0.01);	
@@ -154,7 +155,7 @@ public class DataRegroupeTest {
 
 	}
 
-	@Test 
+	@Test
 	public void  testRegroupementParJour() {
 		Value.regroupageSelected=RegroupementParJour.getInstance();
 		DataRegroupe dataRegroupe=new DataRegroupe();
@@ -177,44 +178,8 @@ public class DataRegroupeTest {
 		dataRegroupe.ecrireResult(fileTest);   	
 	}	
 	
-	@Test @Ignore
-	public void testGPSoneCoursier() {
-		String pathFileTest=pathTest+"/withGPS/";
-		File fileTest=new File(pathFileTest);
 
-		DataFromDirectory data=new DataFromDirectory();
-		data.importDataFromDirectory(fileTest);
-		Assert.assertEquals("erreur nombre Biker",3 ,data.getNbBiker());
-		Assert.assertEquals("erreur nombre facture",4 ,data.getNbFacture());
 
-		Value.regroupageSelected=RegroupementParMois.getInstance();	
 
-		DataRegroupe dataRegroupe=new DataRegroupe();
-		dataRegroupe.getResult(data);
-		dataRegroupe.ecrireResult(fileTest);
-
-		Biker total=dataRegroupe.getBiker(DataRegroupe.nameTotal);
-		Assert.assertEquals(2,total.getSize());
-	}
-
-	@Test @Ignore
-	public void testGPSmulticoursier() {
-		String pathFileTest=pathTest+"/withGPS/";
-		File fileTest=new File(pathFileTest);
-
-		DataFromDirectory data=new DataFromDirectory();
-		data.importDataFromDirectory(fileTest);
-		Assert.assertEquals("erreur nombre Biker",3 ,data.getNbBiker());
-		Assert.assertEquals("erreur nombre facture",4 ,data.getNbFacture());
-
-		Value.regroupageSelected=RegroupementParMois.getInstance();	
-
-		DataRegroupe dataRegroupe=new DataRegroupe();
-		dataRegroupe.getResult(data);
-		dataRegroupe.ecrireResult(fileTest);
-
-		Biker total=dataRegroupe.getBiker(DataRegroupe.nameTotal);
-		Assert.assertEquals(2,total.getSize());
-	}
 
 }

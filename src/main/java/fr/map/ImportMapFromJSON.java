@@ -9,6 +9,8 @@ import java.io.FileReader;
 import java.io.IOException;
 
 import fr.gui.GUI;
+import fr.modele.Shift;
+import fr.modele.ShiftImplGPS;
 
 public class ImportMapFromJSON {
 	Map map;
@@ -29,8 +31,8 @@ public class ImportMapFromJSON {
 		Long time1 = System.currentTimeMillis();
 		Map mapResult=new Map();
 		mapResult.setFile(ficherJSON);
-
-		Track t=new Track(null);
+		ShiftImplGPS shift =null;
+		Track t=new Track(shift);
 
 		String messGUI="Importation "+ ficherJSON.getName()+" en cours"+", peut prendre quelques minutes";
 		GUI.updateUI(messGUI);	

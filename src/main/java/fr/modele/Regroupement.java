@@ -4,9 +4,13 @@ import static fr.modele.Value.formatNumber;
 import static fr.algorithmes.Utilitaire.getMultiSeparateur;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.Iterator;
 
-public abstract class Regroupement {
+import fr.algorithmes.Groupeur;
+
+public abstract class Regroupement implements Groupeur<Shift>{
 
 	public String textCombo;
 	
@@ -87,17 +91,45 @@ public abstract class Regroupement {
 	public String getTextCombo() {
 		return textCombo;
 	}
+	
+	void miseEnformeCDebut(Shift shift) {
+		shift.setcDebut(miseEnformeCDebut(shift.getcDebut()));
+	}
 
 	public Calendar miseEnformeCDebut(Calendar c) {
 		return c;
 	}
 
-
-	long mesureShift(Calendar calendar) {
-		return (long) (calendar.getTimeInMillis()/100);
+	long mesureShift(Shift shift) {
+		return (long) (shift.getcDebut().getTimeInMillis()/100);
+	}
+	
+	@Override
+	public int compare(Shift arg0, Shift arg1) {
+	
+		return (int) (mesureShift(arg0)-mesureShift(arg1));
+	}
+	
+	
+	@Override
+	public Shift groupement(ArrayList<Shift> list) {
+		
+		if(list.size()==1) {
+			return list.get(0).clone2();
+		}
+		
+		Iterator<Shift> iterator=list.iterator();
+		Shift  result=(iterator.next()).clone2();
+		while(iterator.hasNext()){
+			result.addition(iterator.next());
+		}
+		
+		miseEnformeCDebut(result);	
+		
+		return result;
 	}
 
-	abstract Boolean isARegrouper(Shift shift2,Shift shift3);
+	public abstract boolean isARegrouper(Shift shift1,Shift shift2);
 
 	String lineBikerCA() {
 
@@ -110,10 +142,6 @@ public abstract class Regroupement {
 		res+=formatNumber((shift.getRevenue()+shift.getPrime()+shift.getTips())/shift.getDuree())+Value.separateurCSV;
 		return res;
 	}
-
-
-
-
 
 	String lineBiker() {
 
@@ -173,11 +201,15 @@ public abstract class Regroupement {
 	}
 
 	abstract String getDateChart();
+	
 	abstract double getDureeChart();
+	
 	abstract String getTitleDureeChart();
 
 	boolean isPasserUneLigneFichierResult(Shift shiftTotalPrecedent) {
 		return false;
 	}
 
+	
+	
 }

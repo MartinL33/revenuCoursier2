@@ -34,11 +34,6 @@ public class ShiftImpl extends Shift implements Cloneable {
 		return clone();
 	}
 
-	@Override
-	protected Shift cloneForRegroupage() {	
-		return clone();
-	}
-
 
 
 

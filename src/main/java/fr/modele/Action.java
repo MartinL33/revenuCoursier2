@@ -46,6 +46,10 @@ public class Action{
 		Action.fileImport = fileImport;	
 		reset();
 	} 
+	
+	public static void setFileExport(File fileExport) {
+		Action.fileExport = fileExport;
+	}
 
 	public static boolean hasFileImport() {
 		return Action.fileImport!=null&&Action.fileImport.exists()&&fileImport.isDirectory();
@@ -100,7 +104,7 @@ public class Action{
 
 			GUI.setStop();
 			if(dataSource.isEmpty()) {					
-				fileExport=fileImport;		
+				
 				dataSource.importDataFromDirectory(fileImport);				
 			}
 			if(!Value.runImport) {
@@ -113,7 +117,9 @@ public class Action{
 				}
 
 				else {
+					
 					dataRegroupe.getResult(dataSource);
+					setFileExport(fileImport);		
 					dataRegroupe.ecrireResult(fileExport);
 					//ouvertureDossierResult();				
 

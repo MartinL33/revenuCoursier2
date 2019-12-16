@@ -8,8 +8,10 @@ package fr.modele;
 import static fr.modele.Value.regroupageSelected;
 
 import java.util.ArrayList;
+import java.util.Comparator;
 
-import fr.algorithmes.GroupeurAddition;
+import fr.algorithmes.Groupeur;
+import fr.algorithmes.GroupeurList;
 
 /**
  *
@@ -47,6 +49,11 @@ public abstract class Biker  {
 		}	
 	}
 
+	protected void tri() {
+		Comparator<Shift> groupeurTousLesShifts=RegroupementToutLesShifts.getInstance();
+		this.arrayListShift.sort(groupeurTousLesShifts);
+	}
+
 	abstract void addCloneShift(Shift shift);
 
 	public ArrayList<Shift> getList(){
@@ -81,7 +88,7 @@ public abstract class Biker  {
 	Shift getShift(Shift shift){
 
 		for(Shift shift1:arrayListShift){
-			if(shift.isARegouper(shift1,Value.regroupageSelected)){
+			if(Value.regroupageSelected.isARegrouper(shift1,shift)) {
 				return shift1;
 			}
 		}
@@ -143,17 +150,33 @@ public abstract class Biker  {
 	}  
 
 	Biker bikerCloneWithShiftRegroupe() {		
-		
-	
-		Biker res= (Biker) this.clone2();
-		
-		GroupeurAddition<Shift> groupeurAddition=new GroupeurAddition<Shift>(Value.regroupageSelected);
+		Biker res;
+		if(Value.regroupageSelected.isEclaterShift) {
+			res= (Biker) this.cloneEclate();
+		}
+		else {
+			res= (Biker) this.clone2();
+		}
+
+
+		GroupeurList<Shift> groupeurAddition=new GroupeurList<Shift>(Value.regroupageSelected);
 
 		groupeurAddition.setList(res.arrayListShift);
-		res.arrayListShift=groupeurAddition.grouperAddition();
+		res.arrayListShift=groupeurAddition.grouper();
 
 		return res;
 	}    
+
+	private Biker cloneEclate(){
+		Biker res= (Biker) this.clone2();
+		res.arrayListShift=new ArrayList<>();
+
+		for(Shift shift :this.arrayListShift){
+			res.arrayListShift.addAll(shift.eclaterShift());		
+		}
+
+		return res;
+	}  
 
 	String getLineToWrite(Shift shiftTotal) {
 

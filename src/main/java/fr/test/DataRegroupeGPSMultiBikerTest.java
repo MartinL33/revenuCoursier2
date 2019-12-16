@@ -6,8 +6,10 @@ import java.io.File;
 
 import org.junit.Assert;
 import org.junit.BeforeClass;
+import org.junit.Ignore;
 import org.junit.Test;
 
+import fr.modele.Action;
 import fr.modele.Biker;
 import fr.modele.BikerImp;
 import fr.modele.BikerImpGPS;
@@ -25,7 +27,7 @@ public class DataRegroupeGPSMultiBikerTest {
 	public static void setFile() {
 		String pathFileTest=DataRegroupeTest.pathTest+"/Biker+GPS/multi-coursier/";
 		fileTest=new File(pathFileTest);    
-		
+		Action.setFileExport(fileTest);
 		data=new DataFromDirectory();
 		data.importDataFromDirectory(fileTest);
 		Assert.assertEquals("erreur nombre Biker",2, data.getNbBiker());	

@@ -6,7 +6,7 @@ import static fr.map.ValueMap.ID_RESTO_DEFAUT;
 import static fr.map.ValueMap.IND_DEFAUT;
 import static fr.map.ValueMap.PRECISION_DEFAUT;
 
-import fr.algorithmes.ComparableWithArg;
+
 import fr.gui.GUI;
 import fr.modele.Biker;
 import fr.modele.Shift;
@@ -16,7 +16,7 @@ import fr.modele.Shift;
  *
  * @author martin
  */
-public class Localisation implements ComparableWithArg<Localisation>,Cloneable{
+public class Localisation implements Comparable<Localisation>,Cloneable{
 
 
 
@@ -44,12 +44,7 @@ public class Localisation implements ComparableWithArg<Localisation>,Cloneable{
 		precision=PRECISION_DEFAUT;
 	}
 
-	Localisation(long time,float latitude,float longitude, int indication){
-		this(time,latitude,longitude,indication,DUREE_DEFAUT,ID_RESTO_DEFAUT);
-	}
-	Localisation(long time,float latitude,float longitude, int indication,int duree){
-		this(time,latitude,longitude,indication,duree, ID_RESTO_DEFAUT);
-	}
+
 
 	public Localisation clone() {
 		Localisation clone=null;  
@@ -62,14 +57,7 @@ public class Localisation implements ComparableWithArg<Localisation>,Cloneable{
 		return clone;
 	}
 
-	private Localisation(long time, float latitude, float longitude, int indication, int duree, int idResto){
-		this.time=time;
-		this.latitude=latitude;
-		this.longitude=longitude;
-		this.duree=duree;
-		this.indication=indication;
-		this.idResto=idResto;
-	}
+	
 
 	void fixPosition(Localisation l){
 		this.latitude=l.getLatitudeRadian();
@@ -219,37 +207,14 @@ public class Localisation implements ComparableWithArg<Localisation>,Cloneable{
 		return null;
 	}
 
-	public Localisation getCloneCorrected(Shift shift) {
-
-		Localisation l=this.clone();
-		if(l.time<shift.getcDebut().getTimeInMillis()) {
-			l.time=shift.getcDebut().getTimeInMillis();
-		}
-		if(l.time>shift.getcFin().getTimeInMillis()) {
-			l.time=shift.getcFin().getTimeInMillis();
-		}		
-
-		return l;
-
-	}	
-
-
-
-
-
-
+	
 
 	@Override
-	public int compareTo(Localisation l, Object o) {
-
-
+	public int compareTo(Localisation l) {
 		if (this.time==l.time) return 0;			
 		else return (int) (this.time-l.time)/1000;
 
-
 	}
-
-
 
 }
 

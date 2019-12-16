@@ -64,11 +64,7 @@ public class ShiftImplGPS extends ShiftImpl implements Cloneable {
 		return clone();
 	}
 
-	@Override
-	protected Shift cloneForRegroupage() {	
-
-		return clone();		
-	}
+	
 
 	@Override
 	public Shift clone() {	  

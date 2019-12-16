@@ -24,7 +24,7 @@ public class RegroupementParJour extends Regroupement {
 	}
 
 	@Override
-	Boolean isARegrouper(Shift shift1, Shift shift2) {
+	public boolean isARegrouper(Shift shift1, Shift shift2) {
 		Calendar calendar1=shift1.getcDebut();
 		Calendar calendar2=shift2.getcDebut();
 		

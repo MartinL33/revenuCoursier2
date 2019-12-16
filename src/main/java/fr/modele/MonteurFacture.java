@@ -33,7 +33,7 @@ public class MonteurFacture {
 	static boolean isCABrutTVA=false;  //chiffre d'affaire brute ou net de TVA? 
 	private double total=0.0;
 	private double tips=0.0;
-
+	private File file=null;
 	private Facture facture=new Facture();	
 
 	//lines import
@@ -50,6 +50,7 @@ public class MonteurFacture {
 
 	public MonteurFacture(File file) {
 		assert file !=null;
+		this.file=file;
 		String stringFacture=null;
 
 		if(isFactureFile(file)) {
@@ -638,11 +639,20 @@ public class MonteurFacture {
 	}
 
 	private boolean factureValide() {
+		
+		if(facture.isEmpty()) {
+			String s="facture vide: ";
+			if(file!=null)  s+=file.getName();
+			System.out.println(s);
+			return false;
+		}
 		if(facture.getDateDebut()==null) {
-			System.out.println("facture non valide : date null");
+			
+			System.out.println("facture non valide : date null ");
 			return false;
 		}
 		if(facture.getDateFin()==null) {
+			
 			return false;
 		}
 		if(facture.getNameBiker()==null||facture.getNameBiker().isEmpty()) {
