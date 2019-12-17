@@ -113,6 +113,7 @@ public class Action{
 			else {
 				if(dataSource.isEmpty())    {
 					GUI.updateUI(messPasdeFacture);
+					
 
 				}
 
@@ -129,10 +130,11 @@ public class Action{
 
 					GUI.updateUI("résultats détaillés dans le fichier "+"statDeliveroo-"+Value.regroupageSelected.textCombo+".csv");
 
-					GUI.setLancer();
+					
 				}
 			}
 			Value.runImport = true;
+			GUI.setLancer();
 		}
 
 	}

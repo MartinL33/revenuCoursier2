@@ -167,6 +167,34 @@ public class Facture{
 			}
 		}
 	}
+	
+	public double getPrime() {
+		double res=0;
+
+		for(Shift shift:shifts){			
+			res+=shift.getPrime();				
+		}
+		return res;
+	}
+	
+	
+	public double getTips() {
+		double res=0;
+
+		for(Shift shift:shifts){			
+			res+=shift.getTips();				
+		}
+		return res;
+	}
+	
+	public double getTotal() {
+		double res=0;
+
+		for(Shift shift:shifts){			
+			res+=shift.getTips()+shift.getPrime()+shift.getRevenue();				
+		}
+		return res;
+	}
 
 
 }

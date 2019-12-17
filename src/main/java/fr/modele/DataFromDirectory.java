@@ -85,13 +85,14 @@ public class DataFromDirectory {
 		listSourceBiker=factures.getListBiker(Value.typeParBiker);	
 		listSourceVille=factures.getListBiker(Value.typeParVille);
 
-		String mess;
-
-		if(listSourceBiker.size()<2)  
+		String mess="";
+		if(listSourceBiker.size()==1)  
 			mess="Import terminé, Biker: "+listSourceBiker.get(0).getNameBiker()+
 			" nombre facture: "+factures.getNbFacture();			
-		else mess="Import terminé, nombre Biker: "+listSourceBiker.size()+
-				" nombre facture: "+factures.getNbFacture();
+		else if(listSourceBiker.size()==1) {
+			mess="Import terminé, nombre Biker: "+listSourceBiker.size()
+			+" nombre facture: "+factures.getNbFacture();
+		}				
 		GUI.updateUI(mess);	
 
 		if(Value.isSaving) send();

@@ -1,16 +1,8 @@
 package fr.modele;
 
 import static fr.algorithmes.Utilitaire.isContenuDansTableau;
-import static fr.modele.FactureData.caution;
-import static fr.modele.FactureData.currencySign;
-import static fr.modele.FactureData.currencySign2;
-import static fr.modele.FactureData.ignore;
-import static fr.modele.FactureData.nomJoursSemaine;
-import static fr.modele.FactureData.patternDateFormatFacture;
-import static fr.modele.FactureData.pourboires;
-import static fr.modele.FactureData.result;
-import static fr.modele.FactureData.sep;
-import static fr.modele.FactureData.totalTab;
+
+import static fr.modele.FactureData.*;
 import static fr.modele.Text.nameResult;
 
 import java.io.File;
@@ -33,6 +25,7 @@ public class MonteurFacture {
 	static boolean isCABrutTVA=false;  //chiffre d'affaire brute ou net de TVA? 
 	private double total=0.0;
 	private double tips=0.0;
+	private double aDeduire=0.0;
 	private File file=null;
 	private Facture facture=new Facture();	
 
@@ -77,7 +70,7 @@ public class MonteurFacture {
 		}		
 		getVille(file);		
 		importString(stringFacture);
-					
+
 		facture.setShiftsNameFile(file.getName());
 		controleFacture();
 
@@ -93,7 +86,7 @@ public class MonteurFacture {
 	private static Boolean isFactureFile(File file){
 		if(file.getName().startsWith(nameResult)) return false;
 		if(!file.exists()) return false;
-		if(file.isDirectory()) return false;
+		if(!file.isFile()) return false;
 		if(!file.canRead()) return false;
 		if(file.getName().length()<4) return false;
 		return true;
@@ -135,12 +128,12 @@ public class MonteurFacture {
 		return pdfFileInText;
 	}
 
-	private Boolean isFactureDocument(PDDocument document){
+	private Boolean isFactureDocument(PDDocument document){		
 		if(document.isEncrypted()) return false;
-		if(document.getNumberOfPages()>5) return false;
-		if(document.getVersion()==1.5) return true;
-		return document.getVersion()>1.299&&document.getVersion()<1.301;	
-
+		else if(document.getNumberOfPages()>5) return false;
+		else if(document.getVersion()==1.5f) return true;		
+		else if(document.getVersion()==1.3f) return true;
+		return false;	
 	}
 
 	private boolean importString(String stringFacture) {
@@ -157,8 +150,8 @@ public class MonteurFacture {
 		else if(stringFacture.contains("\n")) {
 			tabLine = stringFacture.split("\n");
 		}
-		
-		
+
+
 		boolean res=importTabLine(tabLine);
 		return res;
 	}	
@@ -186,7 +179,6 @@ public class MonteurFacture {
 	}
 
 
-
 	private void detectLangAndInitialiseDates(){
 		localeFacture=Locale.FRANCE;
 		dateFormatFacture=new SimpleDateFormat(patternDateFormatFacture,localeFacture);	
@@ -194,36 +186,46 @@ public class MonteurFacture {
 	}
 
 	private void importLines() {
-		float aDeduire=0;
+		
 		for (String line : lines) { 
-
-			String separateurChamp = ":";			
-
-			if(line.contains(separateurChamp)
-					&& line.split(separateurChamp).length==2
-					&& !line.endsWith(separateurChamp)) {
-
-				importLineWithSeparateurChamp(line, separateurChamp);
+	//		System.out.println(line);
+			
+			if(isLineContains(line, ":")) {
+				importLineWithDeuxPoint(line);
 			}
 
 			else if(startWhith(line,nomJoursSemaine)) {	
 				importShift(line);
 			}
 
+			else if(isLineContains(line, "€")){
+				importLineWithCurrency(line);
+			}
+
 			else {		
-				aDeduire+=importAutreLignes(line);
+				importAutreLignes(line);
 			}
 
 		}
-		if(facture.isEmpty())	    importOldFacture(aDeduire);
+
+		if(facture.isEmpty())	    importOldFacture();
 		else{
 			facture.putShiftsTips(tips); 	  
 			facture.putShiftsPrime(total,tips,aDeduire);
 		}
 	}
 
-	private void importLineWithSeparateurChamp(String line, String seperateurChamp) {
+	private boolean isLineContains(String line, String separateurChamp) {
+		if(!line.contains(separateurChamp)) return false;
+		if(line.endsWith(separateurChamp)) return false;
+		if(line.startsWith(separateurChamp)) return false;
+		if(line.split(separateurChamp).length!=2)  return false;
+		return true;
 
+	}
+
+	private void importLineWithDeuxPoint(String line) {
+		String seperateurChamp=":";
 		String debutLine = line.split(seperateurChamp)[0].trim();
 		String finLigne = (line.split(seperateurChamp)[1]).trim();
 		String[] siretDeliveroo= {"810 365 817 00016","810 365 817 00156"};
@@ -253,12 +255,6 @@ public class MonteurFacture {
 			facture.setNameVille(finLigne);							
 		}
 
-		else if(line.startsWith(pourboires)) {
-
-		}
-
-
-
 	}
 
 	private void setDatePeriode(String s) {
@@ -284,77 +280,82 @@ public class MonteurFacture {
 
 	}
 
-	private float importAutreLignes(String line){
+	private void importAutreLignes(String line){
 
-		float aDeduire=0;	
+		
 
-		if(line.startsWith(pourboires)) {
-			tips=Float.parseFloat(trimString(line.replace(pourboires , "")));
-		}
-		else if(line.startsWith("prestations")) {
-
-		}
-		else if(line.startsWith("commission")) {
-
-		}
-		else if(isCABrutTVA&&line.startsWith("tva")&&!line.startsWith("tva non applicable")) {
-			String[] tabLine=line.split("€");
-			if(tabLine.length==2) {
-				aDeduire-=Float.parseFloat(trimString(tabLine[1]));
-			}
-			GUI.messageConsole(line+" a deduire du total ttc:"+aDeduire);
+		if(line.startsWith("avance d’installation")) {
+			aDeduire+=150;
 		}
 
-		else if(line.startsWith("frais de transaction")) {		
-			aDeduire+=parseADeduire(line);
+		else if(line.contains("recommandation")) {
+			findRecommandation();
+		}
+		
+		else if(startWhith(line,ignoreAutre)) {
+			
+		}
+		else {
+		//	System.out.println(line);
+		}
+	
+	}
+
+	private void importLineWithCurrency(String line) {
+		String seperateurChamp="€";
+		String debutLine = line.split(seperateurChamp)[0].trim();
+		String finLigne = (line.split(seperateurChamp)[1]).trim();
+		double aDeduirePrecedent=aDeduire;
+
+		if(debutLine.startsWith(pourboires)) {
+			tips=Float.parseFloat(trimString(finLigne));
 		}
 
-		else if(line.startsWith("commandes livrées")) {
+		else if(startWhith(debutLine,totalTab)) {
+
+			total=(Double.parseDouble(trimString(finLigne.replace(".", "").replace(",", ""))))/100;
 
 		}
-		else if(startWhith(line,caution)) {
 
-			if(line.startsWith("avance d’installation d’équipement")) {
-				aDeduire+=150;
-				GUI.messageConsole(line+" a deduire du total ttc:"+aDeduire);
-			}
-			else {
-				aDeduire+= parseADeduire(line);		   
-			}		
+		else if(debutLine.startsWith("tva")&&!debutLine.startsWith("tva non applicable")) {
+			if(isCABrutTVA) {
+				aDeduire-=Float.parseFloat(trimString(finLigne));
+			}	
+		}
+
+		else if(debutLine.startsWith("frais de transaction")) {		
+			aDeduire+=Float.parseFloat(trimString(finLigne));			
+		}
+
+		else if(debutLine.startsWith("caution")) {
+			aDeduire+= Float.parseFloat(trimString(finLigne));	
+
 		}
 
 		else if(line.contains("recommandation")) {
 
-			if(line.contains("€")) {
-				aDeduire+= parseADeduire(line);		   	   
-			}
-			else {
-				aDeduire+=findRecommandation();
-			}
-		}
-
-		else if(startWhith(line,ignore)) {}
-
-		else if(startWhith(line,totalTab)) {
-
-			total=Double.parseDouble(trimString((line.replace("ttc", "").replace("total", "").replace(".", "").replace(",", ""))).trim())/100;
+			aDeduire+= Float.parseFloat(trimString(finLigne));		   	  
+		
 
 		}
-		return aDeduire;
+
+		else if(startWhith(debutLine,ignoreCurrency)) {
+
+		}
+		else {
+			// System.out.println(line);
+		}
+
+		if(aDeduire!=aDeduirePrecedent) {			
+			//System.out.println(line+" a deduire du total ttc:"+aDeduire);
+		}
+
+
 	}
 
-	private float parseADeduire(String line) {
-		float aDeduireLine=0;
-		String[] tabLine=line.split("€");
-		if(tabLine.length==2) {
-			aDeduireLine=Float.parseFloat(trimString(tabLine[1]));
-		}		
-		fr.gui.GUI.messageConsole(line+" a deduire du total ttc:"+aDeduireLine);
-		return aDeduireLine;
-	}
-
-	private float findRecommandation() {
-		float res=0;
+	
+	private void findRecommandation() {
+	
 		String stringAjutement="";
 		for (String line : lines) { 
 			line = line.toLowerCase(localeFacture).trim();
@@ -368,19 +369,20 @@ public class MonteurFacture {
 				stringAjutement+=" "+line;				
 				if(stringAjutement.contains("€")) {
 
-					res=Float.parseFloat(stringAjutement.split("€")[1]);
-					GUI.messageConsole(stringAjutement+"a deduire du total ttc: "+res);
+					aDeduire+=Float.parseFloat(stringAjutement.split("€")[1]);
+					GUI.messageConsole(stringAjutement+"a deduire du total ttc: "+aDeduire);
 					stringAjutement="";
 				}
 			}
-			else if(startWhith(line,result)){ 
+			else if(startWhith(line,resume)){ 
 				stringAjutement="";
 			}    
 		}
-		return res;
+		
+		
 	}	
 
-	private void importOldFacture(double aDeduire){
+	private void importOldFacture(){
 
 		String sNb="";
 		String sTotal="";
@@ -631,7 +633,7 @@ public class MonteurFacture {
 			}
 		}
 	}
-	
+
 	private void controleFacture() {
 		if(!factureValide()) {			
 			facture=null;		
@@ -639,7 +641,7 @@ public class MonteurFacture {
 	}
 
 	private boolean factureValide() {
-		
+
 		if(facture.isEmpty()) {
 			String s="facture vide: ";
 			if(file!=null)  s+=file.getName();
@@ -647,12 +649,12 @@ public class MonteurFacture {
 			return false;
 		}
 		if(facture.getDateDebut()==null) {
-			
+
 			System.out.println("facture non valide : date null ");
 			return false;
 		}
 		if(facture.getDateFin()==null) {
-			
+
 			return false;
 		}
 		if(facture.getNameBiker()==null||facture.getNameBiker().isEmpty()) {
