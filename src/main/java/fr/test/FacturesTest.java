@@ -1,19 +1,16 @@
 package fr.test;
 
-import static org.junit.Assert.fail;
+
 
 import java.io.File;
 import java.util.ArrayList;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.BeforeClass;
-import org.junit.Ignore;
 import org.junit.Test;
 
 import fr.modele.Facture;
 import fr.modele.Factures;
-import fr.modele.MonteurFacture;
 import fr.modele.Shift;
 
 public class FacturesTest {
