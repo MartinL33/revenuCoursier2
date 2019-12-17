@@ -127,9 +127,7 @@ public class FacturesTest {
 		primeExpected=10.50+10.90;
 		tipsExpected=7.00;
 		totalExpected=72.42;	
-		
-		
-		
+				
 		testOneFacture(f);
 	}
 
