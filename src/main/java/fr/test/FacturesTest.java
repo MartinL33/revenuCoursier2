@@ -44,7 +44,6 @@ public class FacturesTest {
 		factures=Factures.createFromDirectory(fileTest);	
 		Assert.assertEquals("Erreur nb de Facture",14,factures.getNbFacture());
 	}
-
 	
 	@Test     
 	public void test2pdf() {	
@@ -64,8 +63,6 @@ public class FacturesTest {
 		primeExpected=50.00;
 		tipsExpected=11.00;	
 		totalExpected=276.75;
-		
-		
 		
 		testOneFacture(f);
 	}
