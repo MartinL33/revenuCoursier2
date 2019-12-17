@@ -38,7 +38,7 @@ private static RegroupementParSemaine instanceParSemaine=new RegroupementParSema
 	}
 
 	@Override
-	Boolean isARegrouper(Shift shift1,Shift shift2) {
+	public boolean isARegrouper(Shift shift1,Shift shift2) {
 		Calendar calendar1=shift1.getcDebut();
 		Calendar calendar2=shift2.getcDebut();
 		if(calendar1.get(Calendar.WEEK_OF_YEAR)==1&&calendar2.get(Calendar.WEEK_OF_YEAR)==1) {

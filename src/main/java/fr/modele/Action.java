@@ -46,6 +46,10 @@ public class Action{
 		Action.fileImport = fileImport;	
 		reset();
 	} 
+	
+	public static void setFileExport(File fileExport) {
+		Action.fileExport = fileExport;
+	}
 
 	public static boolean hasFileImport() {
 		return Action.fileImport!=null&&Action.fileImport.exists()&&fileImport.isDirectory();
@@ -100,7 +104,7 @@ public class Action{
 
 			GUI.setStop();
 			if(dataSource.isEmpty()) {					
-				fileExport=fileImport;		
+				
 				dataSource.importDataFromDirectory(fileImport);				
 			}
 			if(!Value.runImport) {
@@ -109,11 +113,14 @@ public class Action{
 			else {
 				if(dataSource.isEmpty())    {
 					GUI.updateUI(messPasdeFacture);
+					
 
 				}
 
 				else {
+					
 					dataRegroupe.getResult(dataSource);
+					setFileExport(fileImport);		
 					dataRegroupe.ecrireResult(fileExport);
 					//ouvertureDossierResult();				
 
@@ -123,10 +130,11 @@ public class Action{
 
 					GUI.updateUI("résultats détaillés dans le fichier "+"statDeliveroo-"+Value.regroupageSelected.textCombo+".csv");
 
-					GUI.setLancer();
+					
 				}
 			}
 			Value.runImport = true;
+			GUI.setLancer();
 		}
 
 	}

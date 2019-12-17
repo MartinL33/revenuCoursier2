@@ -29,7 +29,7 @@ public class DataFromDirectoryTest {
 		Assert.assertEquals("erreur nombre Biker", 7, data.getNbBiker());
 	}
 	
-	@Test 
+	@Test @Ignore
 	public void testBikerEtGPSOneCoursier() {
 
 

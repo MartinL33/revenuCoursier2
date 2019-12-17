@@ -7,7 +7,7 @@ Facture pour la période: 29 mai 2016 - 11 juin 2016
 Adresse : rue, france, bordeaux, 33000
 N° SIREN : 819534599564
 Facture n°: DELI-6
-Nom: un syndicaliste malhonnete
+Nom: un syndicaliste
 Date de facturation: 13 juin 2016
 FACTURE POUR PRESTATION DE SERVICES DE LIVRAISON DE REPAS
 Ajustements

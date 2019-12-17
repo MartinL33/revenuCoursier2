@@ -1,8 +1,8 @@
 package fr.modele;
 
+import static fr.algorithmes.Utilitaire.formatDouble;
 import static fr.modele.FactureData.patternDateFormatFacture;
 import static fr.modele.Value.regroupageSelected;
-import static fr.algorithmes.Utilitaire.formatDouble;
 import static java.lang.Math.abs;
 
 import java.text.SimpleDateFormat;
@@ -10,10 +10,10 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Locale;
 
-import fr.algorithmes.GroupableAddition;
+
 import fr.gui.GUI;
 
-public abstract class Shift implements GroupableAddition<Shift>{
+public abstract class Shift {
 
 	/** .
 	 * date calendar de début du shift
@@ -101,6 +101,10 @@ public abstract class Shift implements GroupableAddition<Shift>{
 	public Calendar getcDebut(){
 		return  calendarDebut;
 	} 
+	
+	public void setcDebut(Calendar cDebut) {
+		calendarDebut=cDebut;
+	}
 
 	public Calendar getcFin(){
 		return  calendarFin;
@@ -186,26 +190,6 @@ public abstract class Shift implements GroupableAddition<Shift>{
 		return res.toString();
 	}
 	
-	
-
-	@Override
-	public int compareTo(Shift shift,Object mode) {	
-		assert(mode instanceof Regroupement);
-
-		return (int) (this.mesureShift()-shift.mesureShift());
-
-	}
-
-	protected long mesureShift(){    	
-		return regroupageSelected.mesureShift(this.calendarDebut);		
-	}
-
-	public boolean isARegouper(Shift shift, Object regroupageSelected){ 	
-		assert (regroupageSelected instanceof Regroupement);
-		Regroupement regroupage= (Regroupement) regroupageSelected;
-		return regroupage.isARegrouper(shift, this);		
-	}
-
 	public Shift cloneWithCalendars(Calendar cDebut,Calendar cFin){
 		Shift clone=this.clone2();	
 		clone.setCalendars((Calendar) cDebut.clone(), (Calendar) cFin.clone());	
@@ -215,35 +199,6 @@ public abstract class Shift implements GroupableAddition<Shift>{
 		clone.prime=this.prime*clone.duree/this.duree;
 		return clone;
 	}
-
-
-
-
-	@Override
-	public ArrayList<Shift> cloneEclate(Object modeSelected) {
-
-		assert(modeSelected instanceof Regroupement);
-		Regroupement regroupementSelected= (Regroupement) modeSelected;
-
-		ArrayList<Shift> res= new ArrayList<Shift>();
-
-		if(regroupementSelected.isEclaterShift
-				&&!this.isArtificiel){			
-
-			res.addAll(this.eclaterShift());
-
-		}
-		else {
-			Shift s= this.cloneForRegroupage();
-			if(s!=null) {
-				res.add(s);	    
-			}
-		}
-
-		return res;
-	}
-
-	protected abstract Shift cloneForRegroupage();
 
 	public ArrayList<Shift> eclaterShift(){
 		ArrayList<Shift> res= new ArrayList<Shift>();

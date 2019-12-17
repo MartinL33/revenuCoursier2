@@ -1,0 +1,27 @@
+client: deliveroo france sas
+19 rue des petites écuries
+paris, france 75010
+n° siret: 810 365 817 00016
+emetteur:
+nom: unecoursiere
+adresse : douves, 33800, bordeaux, france
+n° siren : 82345886064
+date de facturation: 09 octobre 2018
+facture n°: deli-15
+facture pour la période: 07 octobre 2018 au 07 octobre 2018
+facture pour prestation de services de livraison de repas
+prestations du 07 octobre 2018 au 07 octobre 2018
+jour date de à heures commandes livrées total
+ajustements
+catégorie note montant
+avance d’installation d’équipement remboursement kit
+deliveroo
+€150.00
+total des ajustements €150.00
+résumé
+ajustments €150.00
+total ttc €150.00
+tva non applicable, art. 293 b du cgi
+« en cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article l.441-3 et l.441-6 du code de commerce »
+1facture n°: deli-15

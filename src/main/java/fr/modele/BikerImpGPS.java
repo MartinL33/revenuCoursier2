@@ -66,12 +66,8 @@ public class BikerImpGPS extends Biker implements Cloneable{
 
 	void setMap(Map map) {
 
-		Regroupement r=RegroupementToutLesShifts.getInstance();			
-
-		Trieur<Shift> trieur = new TrieurBulle<Shift>();
-		trieur.setModeTri(r);
-		trieur.setArray(this.getList());	
-		trieur.tri();
+		this.tri();
+		
 		GUI.updateUI("Intersection whith Biker " +getNameBiker());
 		Map map2=map.clone();
 		map2.intersectionWithBiker(this);

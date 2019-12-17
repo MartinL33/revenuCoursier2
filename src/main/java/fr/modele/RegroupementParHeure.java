@@ -31,16 +31,15 @@ public class RegroupementParHeure extends Regroupement {
 	}
 	
 	@Override
-	long mesureShift(Calendar calendar) {
-		int jour=calendar.get(Calendar.DAY_OF_WEEK);
+	long mesureShift(Shift shift) {
+		int jour=shift.getcDebut().get(Calendar.DAY_OF_WEEK);
 	    // debut semaine=lundi 
 	    if(jour==Calendar.SUNDAY) jour=Calendar.SATURDAY+1; 
-	    return calendar.get(Calendar.HOUR_OF_DAY)+24*jour;
-		
+	    return shift.getcDebut().get(Calendar.HOUR_OF_DAY)+24*jour;		
 	}	
 
 	@Override
-	Boolean isARegrouper(Shift shift1,Shift shift2) {
+	public boolean isARegrouper(Shift shift1,Shift shift2) {
 		
 		Calendar calendar1=shift1.getcDebut();
 		Calendar calendar2=shift2.getcDebut();

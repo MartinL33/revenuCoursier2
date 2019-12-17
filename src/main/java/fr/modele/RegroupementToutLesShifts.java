@@ -29,7 +29,7 @@ public class RegroupementToutLesShifts  extends Regroupement{
 	
 	
 	@Override
-	Boolean isARegrouper(Shift shift1,Shift shift2) {
+	public boolean isARegrouper(Shift shift1,Shift shift2) {
 		
 		return (shift1.getNameFile().equals(shift2.getNameFile()))&&
 				Math.abs(shift1.getcDebut().getTimeInMillis()-shift2.getcDebut().getTimeInMillis())<10;

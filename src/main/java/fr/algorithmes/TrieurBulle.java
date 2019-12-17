@@ -2,7 +2,7 @@ package fr.algorithmes;
 
 import java.util.ArrayList;
 
-public class TrieurBulle<T extends ComparableWithArg<T>> implements Trieur<T> {
+public class TrieurBulle<T extends Comparable<T>> implements Trieur<T> {
 	ArrayList<T> array;
 	Object modeTri;
 	public TrieurBulle() { }  
@@ -26,7 +26,7 @@ public class TrieurBulle<T extends ComparableWithArg<T>> implements Trieur<T> {
 		for (int i = 1; i < array.size() ; i++){    
 			element = array.get(i);
 			compteur = i - 1;
-			while (compteur >= 0 && array.get(compteur).compareTo(element,modeTri)>0)
+			while (compteur >= 0 && array.get(compteur).compareTo(element)>0)
 			{
 				array.set(compteur + 1, array.get(compteur));		          
 				compteur--;

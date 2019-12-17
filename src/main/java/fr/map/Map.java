@@ -9,6 +9,7 @@ import java.util.Date;
 
 import fr.modele.Biker;
 import fr.modele.Shift;
+import fr.modele.ShiftImplGPS;
 
 
 public class Map implements Cloneable{
@@ -124,7 +125,7 @@ public class Map implements Cloneable{
 						if(trackTemp==null) {
 							trackTemp=new Track(shift);
 						}
-						trackTemp.add(localisation.getCloneCorrected(shift));		
+						trackTemp.add(localisation.clone());		
 
 					}
 
@@ -140,7 +141,7 @@ public class Map implements Cloneable{
 						//un autre shift commence
 						if(shift!=null) {
 							trackTemp =new Track(shift);
-							trackTemp.add(localisation.getCloneCorrected(shift));
+							trackTemp.add(localisation.clone());
 						}
 					}
 				}
@@ -158,7 +159,8 @@ public class Map implements Cloneable{
 	public Map subMap(Date dateDebut,Date dateFin) {
 		
 		assert (dateFin.getTime()>dateDebut.getTime());
-		Track track=new Track(null);
+		ShiftImplGPS shift=null;
+		Track track=new Track(shift);
 		for(Track t:tracks){		
 			for(Localisation l:t.getList()) {
 				if(l.getTime()>dateDebut.getTime()

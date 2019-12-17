@@ -3,6 +3,7 @@ package fr.modele;
 import static fr.modele.Value.localeResult;
 
 import java.text.SimpleDateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 
 public class RegroupementParMois extends Regroupement{
@@ -28,7 +29,7 @@ private static RegroupementParMois instanceParMois=new RegroupementParMois();
 	}
 
 	@Override
-	Boolean isARegrouper(Shift shift1,Shift shift2) {
+	public boolean isARegrouper(Shift shift1,Shift shift2) {
 		Calendar calendar1=shift1.getcDebut();
 		Calendar calendar2=shift2.getcDebut();
 		
@@ -59,5 +60,8 @@ private static RegroupementParMois instanceParMois=new RegroupementParMois();
 		
 		return "durée en semaine de 35h";
 	}
+
+
+
 	
 }
