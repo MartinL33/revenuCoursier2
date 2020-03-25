@@ -87,6 +87,7 @@ public class Facture{
 	}
 
 	void addShift(Shift shift) {
+		shift.setNameFile(nameFile);	
 		shifts.add(shift);
 	}
 
@@ -106,7 +107,7 @@ public class Facture{
 		this.adresse = adresse;
 	}		
 
-	void setShiftsNameFile(String nameFile){
+	void setNameFile(String nameFile){
 		if(!nameFile.isEmpty()&&!nameFile.equals("")){
 			for(Shift shift:shifts){
 				shift.setNameFile(nameFile);	

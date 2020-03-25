@@ -25,8 +25,8 @@ public class DataFromDirectoryTest {
 
 		DataFromDirectory data=new DataFromDirectory();
 		data.importDataFromDirectory(fileTest);
-
-		Assert.assertEquals("erreur nombre Biker", 7, data.getNbBiker());
+		
+		Assert.assertEquals("erreur nombre Biker", 8, data.getNbBiker());
 	}
 	
 	@Test @Ignore

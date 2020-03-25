@@ -26,7 +26,7 @@ public class MonteurFacture {
 	private double total=0.0;
 	private double tips=0.0;
 	private double aDeduire=0.0;
-	private File file=null;
+
 	private Facture facture=new Facture();	
 
 	//lines import
@@ -41,9 +41,20 @@ public class MonteurFacture {
 		return facture;
 	}
 
+	public MonteurFacture(String[] tabString,File file) {
+		facture.setNameFile(file.getName());
+		importTabLine(tabString);		
+		if(facture.getVille().equals("")) {
+			getVille(file);
+		}		
+		controleFacture();
+		
+	}
+	
 	public MonteurFacture(File file) {
 		assert file !=null;
-		this.file=file;
+		facture.setNameFile(file.getName());
+	//	this.file=file;
 		String stringFacture=null;
 
 		if(isFactureFile(file)) {
@@ -63,23 +74,10 @@ public class MonteurFacture {
 				else {
 					stringFacture=loadFacture(file);	
 				}
-
-
-
 			}				
-		}		
+		}				
 		getVille(file);		
-		importString(stringFacture);
-
-		facture.setShiftsNameFile(file.getName());
-		controleFacture();
-
-	}
-
-
-
-	public MonteurFacture(String[] tabString) {
-		importTabLine(tabString);			
+		importString(stringFacture);		
 		controleFacture();
 	}
 
@@ -175,6 +173,7 @@ public class MonteurFacture {
 
 		detectLangAndInitialiseDates();				
 		importLines();
+		
 		return true;
 	}
 
@@ -188,7 +187,7 @@ public class MonteurFacture {
 	private void importLines() {
 		
 		for (String line : lines) { 
-	//		System.out.println(line);
+		//	System.out.println(line);
 			
 			if(isLineContains(line, ":")) {
 				importLineWithDeuxPoint(line);
@@ -210,8 +209,16 @@ public class MonteurFacture {
 
 		if(facture.isEmpty())	    importOldFacture();
 		else{
+			ajustementManuel();
 			facture.putShiftsTips(tips); 	  
 			facture.putShiftsPrime(total,tips,aDeduire);
+		}
+	}
+	
+	private void ajustementManuel() {
+		if(facture.getNameFile().startsWith("4 Deliveroo 15 - 28 oct 2017 - 758"))  {
+			System.out.println("ajustement manuel");
+			aDeduire+=-150;
 		}
 	}
 
@@ -296,7 +303,7 @@ public class MonteurFacture {
 			
 		}
 		else {
-		//	System.out.println(line);
+			//System.out.println(line);
 		}
 	
 	}
@@ -307,12 +314,16 @@ public class MonteurFacture {
 		String finLigne = (line.split(seperateurChamp)[1]).trim();
 		double aDeduirePrecedent=aDeduire;
 
-		if(debutLine.startsWith(pourboires)) {
+		if(startWhith(debutLine,ignoreCurrency)) {
+			//System.out.println(line);
+		}
+		
+		else if(debutLine.startsWith(pourboires)) {
 			tips=Float.parseFloat(trimString(finLigne));
 		}
 
 		else if(startWhith(debutLine,totalTab)) {
-
+			
 			total=(Double.parseDouble(trimString(finLigne.replace(".", "").replace(",", ""))))/100;
 
 		}
@@ -323,31 +334,20 @@ public class MonteurFacture {
 			}	
 		}
 
-		else if(debutLine.startsWith("frais de transaction")) {		
-			aDeduire+=Float.parseFloat(trimString(finLigne));			
-		}
-
-		else if(debutLine.startsWith("caution")) {
-			aDeduire+= Float.parseFloat(trimString(finLigne));	
-
-		}
-
-		else if(line.contains("recommandation")) {
-
-			aDeduire+= Float.parseFloat(trimString(finLigne));		   	  
 		
+		
+		else if(startWhith(debutLine,aDeduireTab)) {			
+			aDeduire+=Float.parseFloat(trimString(finLigne));
+		}	
 
-		}
-
-		else if(startWhith(debutLine,ignoreCurrency)) {
-
-		}
+		
 		else {
-			// System.out.println(line);
+			 System.out.println("line ignoré :"+line);
 		}
 
-		if(aDeduire!=aDeduirePrecedent) {			
-			//System.out.println(line+" a deduire du total ttc:"+aDeduire);
+		if(aDeduire!=aDeduirePrecedent) {	
+			System.out.println("");
+			System.out.println(line+" a deduire du total ttc:"+aDeduire);
 		}
 
 
@@ -625,14 +625,7 @@ public class MonteurFacture {
 		return res;
 	}
 
-	void setNameFile(File file) {
-		if(facture!=null) {
-			facture.setShiftsNameFile(file.getName());
-			if(facture.getVille().equals("")) {
-				getVille(file);
-			}
-		}
-	}
+	
 
 	private void controleFacture() {
 		if(!factureValide()) {			
@@ -643,8 +636,7 @@ public class MonteurFacture {
 	private boolean factureValide() {
 
 		if(facture.isEmpty()) {
-			String s="facture vide: ";
-			if(file!=null)  s+=file.getName();
+			String s="facture vide: "+facture.getNameFile();
 			System.out.println(s);
 			return false;
 		}
@@ -665,5 +657,5 @@ public class MonteurFacture {
 		}
 		return true;
 	}
-
+	
 }

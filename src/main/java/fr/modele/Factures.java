@@ -69,8 +69,8 @@ public class Factures {
 				if(ligne.startsWith("Facture:")) {
 
 					if(!arrayString.isEmpty()) {
-						MonteurFacture monteur=new MonteurFacture(arrayString.toArray(proto));			
-						monteur.setNameFile(file);
+						MonteurFacture monteur=new MonteurFacture(arrayString.toArray(proto),file);			
+						
 						Facture facture=monteur.getFacture();						
 						addFacture(facture);
 						arrayString=new ArrayList<String>();		
@@ -89,8 +89,8 @@ public class Factures {
 			return false;
 		}
 
-		MonteurFacture monteur=new MonteurFacture(arrayString.toArray(proto));	
-		monteur.setNameFile(file);
+		MonteurFacture monteur=new MonteurFacture(arrayString.toArray(proto),file);	
+		
 		Facture facture=monteur.getFacture();			
 		addFacture(facture);
 

@@ -37,7 +37,7 @@ public class FacturesTest {
 		String pathFileTest=DataRegroupeTest.pathTest+"modele facture/";	
 		fileTest=new File(pathFileTest);    	
 		factures=Factures.createFromDirectory(fileTest);	
-		Assert.assertEquals("Erreur nb de Facture",14,factures.getNbFacture());
+		Assert.assertEquals("Erreur nb de Facture",15,factures.getNbFacture());
 	}
 	
 	@Test     
@@ -126,6 +126,32 @@ public class FacturesTest {
 		testOneFacture(f);
 	}
 
+	@Test     
+	public void testDeliveroo15() {	
+
+		Assert.assertNotNull(fileTest);		
+		Facture f=factures.getFacture("4 Deliveroo 15 - 28 oct 2017 - 758.txt");
+		timeInMillisExpected=1508061600000l;
+		nameExpected="chien";
+		adresseExpected="40, rue dfsfrsfs,";
+		nbShiftExpected=16;
+		nbCMDExpectedFirstShift=15.0;
+		revenuExpectedFirstShift=75.0;
+		primeExpectedFirstShift=1.8863065326633166;
+		tipsExpectedFirstShift=2.937;	
+		dureeExpectedFirstShift=5.2;
+		
+		primeExpected=19.25;
+		tipsExpected=28.00;	
+		totalExpected=762.25;
+		
+		testOneFacture(f);
+	}
+	
+	
+
+
+	
 	@Test  
 	public void  testInvoice20180704() {
 		Facture f=factures.getFacture("invoice_2018-07-04_2018-07-15.pdf");
@@ -301,7 +327,7 @@ public class FacturesTest {
 
 		timeInMillisExpected=1516304280000l;
 		nameExpected="nd";
-		adresseExpected="rue chevreul, , 95000,";
+		adresseExpected="rue chevreul, , 985000,";
 		nbShiftExpected=5;
 		nbCMDExpectedFirstShift=4.0;
 		revenuExpectedFirstShift=23;
@@ -319,7 +345,7 @@ public class FacturesTest {
 	@Test   
 	public void  testInvoice_c52c4f2b_8532() {	
 		Facture f=factures.getFacture("invoice_c52c4f2b_8532_43fd_b64f_5333e29da7bd_27_1564506451.txt");
-
+	
 		timeInMillisExpected=1563213660000l;
 		nameExpected="un arbre";
 		adresseExpected="montagne";
@@ -398,6 +424,7 @@ public class FacturesTest {
 		Assert.assertEquals("tips "+facture.getNameFile()+" fausse", 
 				tipsExpectedFirstShift ,firstShift.getTips(),0.01); 	  
 
+		
 		Assert.assertTrue("date "+facture.getNameFile()+" fausse", 
 				firstShift.getcDebut().getTimeInMillis()==timeInMillisExpected);
 		

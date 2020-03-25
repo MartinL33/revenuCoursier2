@@ -14,8 +14,8 @@ public class FactureData {
 	static final String sep=" ";
 	static final String[] ignoreAutre={"1facture n°","€"};
 	static final String[] totalTab ={"total ttc","total"};
-	static final String[] ignoreCurrency ={"(dont","ajustements","ajustments","total des ajustements","commandes livrées","récompenses","prix minimums forfaitaires"};
-	static final String[] caution={"caution"};
+	static final String[] ignoreCurrency ={"(dont","taux de garantie","garanti","ajustements","ajustments","total des ajustements","commandes livrées","récompenses","prix minimums forfaitaires"};
+	static final String[] aDeduireTab={"erreur pack","caution","remboursement d'avance","remise pour recommandation","frais de transaction"};
 	static final String[] ancienneFacture={"autres up"};
 	
 	static String patternDateFormatFacture="EEEE dd MMMM yyyy HH mm";

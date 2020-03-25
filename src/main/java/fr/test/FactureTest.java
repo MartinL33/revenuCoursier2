@@ -16,9 +16,10 @@ import fr.modele.Shift;
 public class FactureTest {
 
 	static File fileTest;
-
-	long timeInMillisExpected;
-	String nameExpected;
+	String nameFileExpected;	
+	String nameFileShiftExpected;
+	long timeInMillisExpected;	
+	String nameBikerExpected;
 	String adresseExpected;
 	String villeExpected="dataTest";
 	int nbShiftExpected;
@@ -39,8 +40,10 @@ public class FactureTest {
 	@Test   
 	public void  testInvoice20180704() {	
 		File fileTest1=new File(fileTest.getAbsolutePath()+ "/invoice_2018-07-04_2018-07-15.pdf");
+		nameFileExpected="invoice_2018-07-04_2018-07-15.pdf";
+		nameFileShiftExpected="invoice_2018-07-04_2018-07-15";
 		timeInMillisExpected=1530696960000l;
-		nameExpected="martin lepers";
+		nameBikerExpected="martin lepers";
 		adresseExpected="app b119, 237 rue du 14 juillet, , 33400, talence, france";
 		nbShiftExpected=12;
 		nbCMDExpected=8.0;
@@ -54,8 +57,10 @@ public class FactureTest {
 	@Test   
 	public void  testInvoice20170527() {	
 		File fileTest1=new File(fileTest.getAbsolutePath()+ "/invoice_2017-05-27.pdf");
+		nameFileExpected="invoice_2017-05-27.pdf";
+		nameFileShiftExpected="invoice_2017-05-27";
 		timeInMillisExpected=1494757020000l;
-		nameExpected="martin lepers";
+		nameBikerExpected="martin lepers";
 		adresseExpected="app b119, 237 rue du 14 juillet, , 33400, talence, france";
 		nbShiftExpected=27;
 		nbCMDExpected=2.0;
@@ -71,8 +76,10 @@ public class FactureTest {
 	@Test   
 	public void  testInvoice_d8a12731() {	
 		File fileTest1=new File(fileTest.getAbsolutePath()+ "/invoice_d8a12731_110a_49b8_9aab_48cc72a2d571_55_1568133303.pdf");
+		nameFileExpected="invoice_d8a12731_110a_49b8_9aab_48cc72a2d571_55_1568133303.pdf";
+		nameFileShiftExpected = "invoice_d8a12731_110a_49b8_9aab_48cc72a2d571_55_1568133303";
 		timeInMillisExpected=1566898740000l;
-		nameExpected="martin lepers";
+		nameBikerExpected="martin lepers";
 		adresseExpected="app b119, 237 rue du 14 juillet, 33400, talence, france";
 		nbShiftExpected=17;
 		nbCMDExpected=2.0;
@@ -95,18 +102,24 @@ public class FactureTest {
 		Facture facture=monteur.getFacture();	
 	
 		Assert.assertNotNull(facture);
-
+		
+		Assert.assertTrue("nameFile "+fileTest1.getName()+" faux "+facture.getNameFile(), 
+				facture.getNameFile().contentEquals(nameFileExpected));
+		
 		Assert.assertTrue("ville "+fileTest1.getName()+" fausse", 
 				facture.getVille().contentEquals(villeExpected));
 		Assert.assertTrue("adresse "+fileTest1.getName()+" fausse "+facture.getAdresse(), 
 				facture.getAdresse().contentEquals(adresseExpected));
 		Assert.assertTrue("nameBiker "+fileTest1.getName()+" faux "+facture.getNameBiker(), 
-				facture.getNameBiker().contentEquals(nameExpected));
+				facture.getNameBiker().contentEquals(nameBikerExpected));
 		
 		ArrayList<Shift> shifts=facture.getShifts();
 		Assert.assertTrue("nb de shift "+fileTest1.getName()+" faux", 
 				shifts.size()==nbShiftExpected);
 		Shift firstShift=shifts.get(0);
+		Assert.assertTrue("nameFileShift "+firstShift.getNameFile()+" faux "+facture.getNameFile(), 
+				firstShift.getNameFile().contentEquals(nameFileShiftExpected));
+		
 		Assert.assertTrue("nb de commande "+fileTest1.getName()+" faux", 
 				firstShift.getNbCommande()==nbCMDExpected);
 		Assert.assertEquals("durée "+fileTest1.getName()+" fausse", 
