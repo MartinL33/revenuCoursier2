@@ -24,6 +24,7 @@ Lundi 22 Juillet 2019 15:03 22:10 7.1h 13: €64.59 €64.59
 Mardi 23 Juillet 2019 13:08 18:00 4.9h 9: €49.42 €49.42
 Ajustements
 Catégorie Note Montant
+remboursement d'avance – équipement pack equipement €-150.00
 Régularisation période précédente Doublon : commande
 non livree #221041020
 €4.44
@@ -31,10 +32,10 @@ Total des ajustements €4.44
 Résumé
 Commandes livrées €512.20
 Pourboires €20.00
-Ajustments €4.44
+Ajustments €−145,56
 Frais de transaction €-0.50
 1Facture n°: DELI-53
-Total TTC €536.14
+Total TTC €386.14
 TVA non applicable, art. 293 B du CGI
 « En cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
 article L.441-3 et L.441-6 du Code de commerce »

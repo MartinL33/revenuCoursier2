@@ -1,0 +1,58 @@
+client: deliveroo france sas
+19 rue des petites écuries
+paris, france 75010
+n° siret: 810 365 817 00016
+emetteur:
+nom: Chien
+adresse : 40, rue dfsfrsfs,
+n° siren : 8456932499
+date de facturation: 30 octobre 2017
+facture n°: deli-4
+facture pour la période: 15 octobre 2017 au 27 octobre 2017
+facture pour prestation de services de livraison de repas
+prestations du 15 octobre 2017 au 27 octobre 2017
+jour date de à heures commandes livrées total
+dimanche 15 octobre 2017 12:00 17:12 5.2h 15: €75.00 €75.00
+dimanche 15 octobre 2017 18:00 22:00 4.0h 13: €65.00 €65.00
+mardi 17 octobre 2017 19:00 22:02 3.0h 9: €45.00 €45.00
+jeudi 19 octobre 2017 19:00 22:21 3.3h 10: €50.00 €50.00
+vendredi 20 octobre 2017 12:00 14:02 2.0h 5: €25.00 €25.00
+vendredi 20 octobre 2017 19:00 22:00 3.0h 10: €50.00 €50.00
+samedi 21 octobre 2017 11:59 15:03 3.1h 9: €45.00 €45.00
+samedi 21 octobre 2017 19:00 22:04 3.1h 12: €60.00 €60.00
+dimanche 22 octobre 2017 12:00 15:21 3.4h 9: €45.00 €45.00
+dimanche 22 octobre 2017 19:01 00:02 5.0h 5: €25.00 garanti €15.00
+lundi 23 octobre 2017 20:55 22:14 1.3h 3: €15.00 €15.00
+mardi 24 octobre 2017 18:59 23:00 4.0h 12: €60.00 €60.00
+mercredi 25 octobre 2017 12:00 14:00 2.0h 4: €20.00 €20.00
+mercredi 25 octobre 2017 18:00 23:20 5.3h 15: €75.00 €75.00
+jeudi 26 octobre 2017 12:00 14:00 2.0h 5: €25.00 €25.00
+jeudi 26 octobre 2017 19:00 22:17 3.3h 7: €35.00 €35.00
+ajustements
+catégorie note monta
+nt
+remboursement d'avance –
+équipement
+kit deliveroo €-
+150.00
+1facture n°: deli-4
+catégorie note monta
+nt
+condition tarifaire
+exceptionnelle
+condition tarifaire exceptionnelle du 22/10/2017 : 3 commandes
+garanties entre 21:00 et 23:00
+€4.25
+total des ajustements €-
+145.7
+5
+résumé
+commandes livrées €715.00
+taux de garantie €15.00
+pourboires €28.00
+ajustments €-145.75
+total ttc €612.25
+tva non applicable, art. 293 b du cgi
+« en cas de retard de paiement une indemnité forfaitaire pour frais de recouvrement de 40 euros sera demandée,
+article l.441-3 et l.441-6 du code de commerce »
+2facture n°: deli-4
